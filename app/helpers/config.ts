@@ -8,7 +8,7 @@ export const experience = [
   {
     company: "Nexus Labs",
     url: "https://example.com",
-    title: "Staff Software Engineer",
+    title: "Senior Software Engineer",
     dates: "August 2024 – Present",
     points: [
       "Built and scaled a shared Material UI design system, replacing a legacy component library and improving developer velocity, accessibility, and visual consistency across the platform.",
@@ -18,7 +18,7 @@ export const experience = [
     company: "Meridian",
     note: "acquired by Nexus Labs",
     url: "https://example.com",
-    title: "Principal Software Engineer",
+    title: "Senior Software Engineer",
     dates: "September 2022 – July 2024",
     points: [
       "Drove frontend architecture and design system initiatives, creating shared foundations that improved consistency, accessibility, and engineering velocity across product teams.",
@@ -27,7 +27,7 @@ export const experience = [
   {
     company: "Stackbridge",
     url: "https://example.com",
-    title: "Software Engineer",
+    title: "Software Engineer II",
     dates: "February 2021 – August 2022",
     points: [
       "Architected and refined the UI of a SaaS CRM platform using React and Material UI, improving performance and delivering a modernized component library.",
@@ -36,7 +36,7 @@ export const experience = [
   {
     company: "Orion Systems",
     url: "https://example.com",
-    title: "Software Engineer",
+    title: "Software Engineer II",
     dates: "March 2019 – January 2021",
     points: [
       "Rewrote a legacy recruitment application from AngularJS to React using TypeScript, Styled Components, and React Query to modernize the codebase and optimize navigation.",
