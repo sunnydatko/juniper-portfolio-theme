@@ -40,9 +40,9 @@ export default function Writing() {
               mb: 2,
             }}
           >
-            + Blog
+            + My Writing
           </Typography>
-          <Typography variant="h3">Writing</Typography>
+          <Typography variant="h3">Blog</Typography>
         </Box>
 
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
