@@ -101,6 +101,16 @@ export const blogPosts = [
   },
 ];
 
+export const testimonials = [
+  {
+    quote:
+      "One of the most thoughtful engineers I've worked with. They have a rare ability to bridge design and engineering — the kind of person who makes the whole product better, not just their slice of it.",
+    name: "Alex Rivera",
+    title: "VP of Product, Nexus Labs",
+    image: "testimonial-avatar",
+  },
+];
+
 export const education = [
   {
     company: "State University",

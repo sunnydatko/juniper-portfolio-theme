@@ -104,7 +104,7 @@ const ParticleField = () => {
     let height = 0;
     let particles: Particle[] = [];
     let raf = 0;
-    const LINK_DIST = 140;
+    const LINK_DIST = 110;
 
     const count = () => {
       const base = Math.round((window.innerWidth * window.innerHeight) / 20000);
@@ -153,7 +153,7 @@ const ParticleField = () => {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = `rgba(180,200,225,${(1 - dist / LINK_DIST) * 0.20})`;
+            ctx.strokeStyle = `rgba(180,200,225,${(1 - dist / LINK_DIST) * 0.11})`;
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
