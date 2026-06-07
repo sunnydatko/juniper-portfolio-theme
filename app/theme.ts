@@ -16,9 +16,9 @@ const theme = createTheme({
       dark: "#8E7341",  // aged bronze
     },
     error: {
-      light: "#E8A3A3",
-      main: "#C85C5C",
-      dark: "#8A3E3E",
+      light: "#CFA596",
+      main: "#A86A58",
+      dark: "#7A4A3C",
     },
     background: {
       default: "#0b1710",
