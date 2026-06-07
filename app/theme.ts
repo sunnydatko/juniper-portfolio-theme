@@ -6,7 +6,7 @@ const theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      light: "#7E9C87", // sage
+      light: "#A8C4B0", // sage light
       main: "#4F6B59",  // juniper
       dark: "#2A4034",  // pine
     },
