@@ -98,11 +98,11 @@ export default function Testimonial() {
           {avatarSrc && (
             <Box
               sx={{
-                width: 100,
-                height: 100,
+                width: 118,
+                height: 118,
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "2px solid rgba(79,107,89,0.45)",
+                border: "2px solid rgba(79,107,89,0.28)",
                 flexShrink: 0,
                 position: "relative",
               }}
@@ -112,7 +112,7 @@ export default function Testimonial() {
                 alt={name}
                 fill
                 style={{ objectFit: "cover" }}
-                sizes="100px"
+                sizes="118px"
               />
             </Box>
           )}
