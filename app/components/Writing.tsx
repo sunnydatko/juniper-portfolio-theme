@@ -65,8 +65,7 @@ export default function Writing() {
                 backgroundColor: "background.paper",
                 textDecoration: "none",
                 position: "relative",
-                transition:
-                  "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+                transition: "border-color 0.3s ease",
                 "&::after": {
                   content: '""',
                   position: "absolute",
@@ -80,20 +79,21 @@ export default function Writing() {
                   transition: "transform 0.35s ease",
                 },
                 "&:hover": {
-                  transform: "translateY(-5px)",
-                  boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
                   borderColor: "rgba(198,169,106,0.30)",
                   "&::after": { transform: "scaleX(1)" },
+                  "& .blog-img img": { transform: "scale(1.06)" },
                 },
               }}
             >
               {/* Image */}
               <Box
+                className="blog-img"
                 sx={{
                   position: "relative",
                   minHeight: { xs: 200, md: "auto" },
                   flex: { md: "0 0 44%" },
                   overflow: "hidden",
+                  "& img": { transition: "transform 0.45s ease" },
                 }}
               >
                 <Image
