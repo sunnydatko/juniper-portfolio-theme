@@ -3,7 +3,7 @@
 
   # Juniper
 
-  **A foret-dark portfolio template grown in stillness, built to last.**
+  **A portfolio template grown in stillness, built to last.**
 
   Deep greens, organic textures, and ambient motion — built to feel like the quiet of a forest at night.
 
