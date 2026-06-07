@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="app/favicon.png" alt="Juniper" width="64" height="64" />
+  <img src="public/brandmark-icon.svg" alt="Juniper" width="64" height="64" />
 
   # Juniper
 
-  **A forest-dark portfolio template for engineers who ship.**
+  **A foret-dark portfolio template grown in stillness, built to last.**
 
   Deep greens, organic textures, and ambient motion — built to feel like the quiet of a forest at night.
 
