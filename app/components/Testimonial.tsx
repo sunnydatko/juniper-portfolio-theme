@@ -102,7 +102,7 @@ export default function Testimonial() {
                 height: 118,
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "2px solid rgba(79,107,89,0.28)",
+                border: "2px solid rgba(255,255,255,0.08)",
                 flexShrink: 0,
                 position: "relative",
               }}
