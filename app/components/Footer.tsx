@@ -31,8 +31,13 @@ const Footer = () => (
               aria-label={label}
               size="small"
               sx={{
-                color: "grey.500",
-                "&:hover": { color: "primary.main", backgroundColor: "transparent" },
+                color: "grey.400",
+                transition: "color 0.2s, transform 0.2s",
+                "&:hover": {
+                  color: "grey.200",
+                  backgroundColor: "transparent",
+                  transform: "scale(1.2)",
+                },
               }}
             >
               {iconMap[label]}
