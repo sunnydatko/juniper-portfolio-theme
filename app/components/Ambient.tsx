@@ -19,7 +19,7 @@ const BotanicalSprig = ({
     style={style}
     viewBox="0 0 60 220"
     fill="none"
-    stroke="rgba(125,211,252,0.45)"
+    stroke="rgba(79,107,89,0.5)"
     strokeWidth={1.1}
     strokeLinecap="round"
     aria-hidden
@@ -30,7 +30,7 @@ const BotanicalSprig = ({
     <path d="M30 128 C 16 120, 10 128, 8 140" />
     {[40, 52, 64, 76, 88, 100].map((y, i) => (
       <g key={y} transform={`translate(0 ${y})`}>
-        <circle cx={30} cy={0} r={i < 2 ? 2.6 : 2.2} fill="rgba(125,211,252,0.28)" />
+        <circle cx={30} cy={0} r={i < 2 ? 2.6 : 2.2} fill="rgba(79,107,89,0.3)" />
         <line x1={30} y1={-3} x2={24} y2={-7} />
         <line x1={30} y1={-3} x2={36} y2={-7} />
       </g>
@@ -87,28 +87,35 @@ const GradientAura = () => {
   );
 };
 
-/* Floating particles + constellation lines (canvas) ---------------------- */
-type Particle = { x: number; y: number; vx: number; vy: number; r: number };
+/* Firefly field (canvas) -------------------------------------------------- */
+type Firefly = {
+  x: number; y: number;
+  vx: number; vy: number;
+  r: number;
+  phase: number;   // pulse phase offset
+  speed: number;   // pulse speed
+  wander: number;  // direction-change timer
+  angle: number;   // current drift angle
+};
 
-const ParticleField = () => {
+const FireflyField = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
+    if (prefersReducedMotion()) return;
 
-    const reduced = prefersReducedMotion();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    let width = 0;
-    let height = 0;
-    let particles: Particle[] = [];
+    let width = 0, height = 0;
+    let flies: Firefly[] = [];
     let raf = 0;
-    const LINK_DIST = 110;
+    let t = 0;
 
     const count = () => {
-      const base = Math.round((window.innerWidth * window.innerHeight) / 20000);
-      return Math.max(30, Math.min(70, base));
+      const base = Math.round((window.innerWidth * window.innerHeight) / 28000);
+      return Math.max(18, Math.min(45, base));
     };
 
     const init = () => {
@@ -119,56 +126,66 @@ const ParticleField = () => {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      particles = Array.from({ length: count() }, () => ({
+      flies = Array.from({ length: count() }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: (Math.random() - 0.5) * 0.18,
-        r: Math.random() * 1.2 + 0.5,
+        vx: 0,
+        vy: 0,
+        r: Math.random() * 1.4 + 0.8,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.18 + Math.random() * 0.25,
+        wander: Math.random() * 200,
+        angle: Math.random() * Math.PI * 2,
       }));
     };
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        if (!reduced) {
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < -20) p.x = width + 20;
-          if (p.x > width + 20) p.x = -20;
-          if (p.y < -20) p.y = height + 20;
-          if (p.y > height + 20) p.y = -20;
+      t += 1;
+
+      for (const f of flies) {
+        // organic drift — periodically nudge direction
+        f.wander -= 1;
+        if (f.wander <= 0) {
+          f.angle += (Math.random() - 0.5) * 0.7;
+          f.wander = 150 + Math.random() * 250;
         }
+        const driftSpeed = 0.10 + Math.random() * 0.03;
+        f.x += Math.cos(f.angle) * driftSpeed;
+        f.y += Math.sin(f.angle) * driftSpeed * 0.6;
+
+        // soft wrap
+        if (f.x < -30) f.x = width + 30;
+        if (f.x > width + 30) f.x = -30;
+        if (f.y < -30) f.y = height + 30;
+        if (f.y > height + 30) f.y = -30;
+
+        // pulse opacity: gentle sine, individual phase + speed
+        const pulse = 0.5 + 0.5 * Math.sin(t * 0.008 * f.speed + f.phase);
+        const alpha = 0.15 + pulse * 0.7;
+
+        // glow: outer halo then bright core
+        const glow = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r * 5);
+        glow.addColorStop(0, `rgba(228, 211, 164, ${alpha})`);
+        glow.addColorStop(0.4, `rgba(198, 169, 106, ${alpha * 0.55})`);
+        glow.addColorStop(1, "rgba(198, 169, 106, 0)");
+
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(210,220,235,0.55)";
+        ctx.arc(f.x, f.y, f.r * 5, 0, Math.PI * 2);
+        ctx.fillStyle = glow;
         ctx.fill();
-        for (let j = i + 1; j < particles.length; j++) {
-          const q = particles[j];
-          const dx = p.x - q.x;
-          const dy = p.y - q.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < LINK_DIST) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = `rgba(180,200,225,${(1 - dist / LINK_DIST) * 0.11})`;
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
-          }
-        }
+
+        // bright core
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.r * 0.7, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 248, 220, ${alpha * 0.9})`;
+        ctx.fill();
       }
     };
 
-    const loop = () => {
-      draw();
-      raf = requestAnimationFrame(loop);
-    };
-
+    const loop = () => { draw(); raf = requestAnimationFrame(loop); };
     init();
-    if (reduced) draw();
-    else loop();
+    loop();
 
     let resizeTimer = 0;
     const onResize = () => {
@@ -275,7 +292,7 @@ export default function Ambient() {
   return (
     <>
       <GradientAura />
-      <ParticleField />
+      <FireflyField />
       <CursorGlow />
       <div className="ambient-noise" aria-hidden />
       <ScrollReveal />

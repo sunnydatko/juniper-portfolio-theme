@@ -28,29 +28,20 @@ export default function PageLoader() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#020817",
+          background: "#0d1a12",
           zIndex: 9999,
           opacity: fading ? 0 : 1,
           transition: "opacity 0.5s ease",
           pointerEvents: fading ? "none" : "auto",
         }}
       >
-        <div className="orion-loader" aria-hidden="true">
-          <div className="orion-track" />
-          <div className="orion-arc" />
-          <svg
-            className="orion-sparkle"
-            width="18"
-            height="18"
-            viewBox="0 0 20 20"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M10 0 L11.5 8.5 L20 10 L11.5 11.5 L10 20 L8.5 11.5 L0 10 L8.5 8.5 Z"
-              fill="rgba(147, 197, 253, 0.65)"
-            />
-          </svg>
+        <div className="jlp-ripple-wrap" aria-hidden="true">
+          <div className="jlp-ring jlp-ring-1" />
+          <div className="jlp-ring jlp-ring-2" />
+          <div className="jlp-ring jlp-ring-3" />
+          <div className="jlp-ring jlp-ring-4" />
+          <div className="jlp-ring jlp-ring-5" />
+          <div className="jlp-core" />
         </div>
         <span
           style={{
@@ -69,46 +60,53 @@ export default function PageLoader() {
         </span>
       </div>
       <style>{`
-        .orion-loader {
+        .jlp-ripple-wrap {
           position: relative;
-          width: 160px;
-          height: 160px;
+          width: 200px;
+          height: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
-        .orion-track {
+        .jlp-ring {
           position: absolute;
-          inset: 0;
           border-radius: 50%;
-          border: 1.5px solid rgba(59, 130, 246, 0.12);
+          border: 1px solid rgba(79, 107, 89, 0.55);
+          animation: jlpRipple 3.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+          transform: scale(0);
+          opacity: 0;
         }
-        .orion-arc {
-          position: absolute;
-          inset: 0;
+        .jlp-ring-1 { width: 200px; height: 200px; animation-delay: 0s;    border-color: rgba(79, 107, 89, 0.45); }
+        .jlp-ring-2 { width: 200px; height: 200px; animation-delay: 0.72s; border-color: rgba(126, 156, 135, 0.38); }
+        .jlp-ring-3 { width: 200px; height: 200px; animation-delay: 1.44s; border-color: rgba(198, 169, 106, 0.32); }
+        .jlp-ring-4 { width: 200px; height: 200px; animation-delay: 2.16s; border-color: rgba(79, 107, 89, 0.28); }
+        .jlp-ring-5 { width: 200px; height: 200px; animation-delay: 2.88s; border-color: rgba(126, 156, 135, 0.22); }
+        @keyframes jlpRipple {
+          0%   { transform: scale(0.08); opacity: 0.9; }
+          70%  { opacity: 0.4; }
+          100% { transform: scale(1);    opacity: 0;   }
+        }
+        .jlp-core {
+          position: relative;
+          width: 14px;
+          height: 14px;
           border-radius: 50%;
-          background: conic-gradient(
-            from 270deg,
-            transparent 0%,
-            rgba(59, 130, 246, 0.08) 25%,
-            rgba(59, 130, 246, 0.4) 60%,
-            rgba(147, 197, 253, 0.85) 82%,
-            rgba(255, 255, 255, 0.95) 93%,
-            transparent 100%
+          background: radial-gradient(
+            circle at center,
+            rgba(255, 248, 220, 0.95) 10%,
+            rgba(228, 211, 164, 0.7)  45%,
+            rgba(198, 169, 106, 0)    100%
           );
-          -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
-          mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
-          animation: orionSpin 2s linear infinite;
+          animation: jlpCorePulse 1.8s ease-in-out infinite;
+          z-index: 1;
         }
-        .orion-sparkle {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          opacity: 0.7;
-        }
-        @keyframes orionSpin {
-          to { transform: rotate(360deg); }
+        @keyframes jlpCorePulse {
+          0%, 100% { transform: scale(0.85); opacity: 0.7; }
+          50%       { transform: scale(1.2);  opacity: 1.0; }
         }
         @media (prefers-reduced-motion: reduce) {
-          .orion-arc { animation: none; }
+          .jlp-ring { animation: none; opacity: 0.3; transform: scale(0.5); }
+          .jlp-core { animation: none; }
         }
       `}</style>
     </>

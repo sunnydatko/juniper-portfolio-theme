@@ -30,7 +30,7 @@ export default function ReadingProgress() {
         width: "100%",
         transform: "scaleX(0)",
         transformOrigin: "left",
-        backgroundColor: "#3B82F6",
+        backgroundColor: "#C6A96A",
         zIndex: 9999,
         pointerEvents: "none",
         willChange: "transform",

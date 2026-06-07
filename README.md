@@ -1,9 +1,11 @@
 <div align="center">
-  <img src="app/favicon.png" alt="Orion" width="64" height="64" />
+  <img src="app/favicon.png" alt="Juniper" width="64" height="64" />
 
-  # Orion
+  # Juniper
 
-  **A dark, minimal portfolio template built for engineers who ship.**
+  **A forest-dark portfolio template for engineers who ship.**
+
+  Deep greens, organic textures, and ambient motion — built to feel like the quiet of a forest at night.
 
   Built with Next.js 16 · React 19 · Material UI 9 · TypeScript
 
@@ -18,7 +20,18 @@
 
 ## Preview
 
-![Orion preview](public/screenshot.png)
+![Juniper preview](public/screenshot.png)
+
+---
+
+## Design
+
+Juniper draws its palette and mood from the forest floor — deep shadows, muted evergreen tones, and the kind of stillness that makes you slow down and read. The aesthetic is intentional:
+
+- **Forest-dark color palette** — rich near-black backgrounds offset by muted greens and warm neutrals
+- **Ambient background** — a slow, living backdrop that shifts like light through a canopy
+- **Organic texture** — a hero image that grounds the page in something natural, not synthetic
+- **Minimal chrome** — no noise, no gradients fighting for attention; the content breathes
 
 ---
 
@@ -28,7 +41,6 @@
 - **About** — personal bio and summary
 - **Experience** — chronological work history with company, role, and highlights
 - **Blog** — card grid of articles with individual post pages at `/blog/[slug]`
-- **Contact** — inbound contact form
 - **Scroll animations** — CSS-driven reveal system via Intersection Observer, no animation library required
 - **SEO-ready** — server-side rendering, Metadata API, statically generated blog pages, optimized images
 
@@ -80,7 +92,7 @@ The theme — colors, typography, dark mode — is in **`app/theme.ts`**.
 app/
 ├── blog/[slug]/         # Dynamic blog post pages
 ├── components/          # All UI sections and layout components
-│   ├── Ambient.tsx      # Animated background
+│   ├── Ambient.tsx      # Animated background layer
 │   ├── Hero.tsx
 │   ├── About.tsx
 │   ├── Experience.tsx

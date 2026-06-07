@@ -74,7 +74,7 @@ export default function Writing() {
                   left: 0,
                   right: 0,
                   height: "2px",
-                  backgroundColor: "#3B82F6",
+                  backgroundColor: "#C6A96A",
                   transform: "scaleX(0)",
                   transformOrigin: "left",
                   transition: "transform 0.35s ease",
@@ -82,7 +82,7 @@ export default function Writing() {
                 "&:hover": {
                   transform: "translateY(-5px)",
                   boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
-                  borderColor: "rgba(59,130,246,0.20)",
+                  borderColor: "rgba(198,169,106,0.30)",
                   "&::after": { transform: "scaleX(1)" },
                 },
               }}
@@ -126,7 +126,7 @@ export default function Writing() {
                   <Typography
                     aria-hidden
                     sx={{
-                      fontFamily: "var(--font-space-grotesk), sans-serif",
+                      fontFamily: "var(--font-fraunces), serif",
                       fontWeight: 700,
                       fontSize: { xs: 24, md: 30 },
                       color: "rgba(255,255,255,0.10)",
@@ -154,7 +154,7 @@ export default function Writing() {
                       fontSize: 11,
                       letterSpacing: "0.18em",
                       textTransform: "uppercase",
-                      color: "grey.700",
+                      color: "grey.400",
                     }}
                   >
                     · {post.readTime} min read
@@ -166,7 +166,7 @@ export default function Writing() {
                         fontSize: 11,
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
-                        color: "grey.700",
+                        color: "grey.400",
                       }}
                     >
                       · {post.date}

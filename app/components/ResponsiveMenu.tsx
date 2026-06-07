@@ -48,7 +48,7 @@ export default function ResponsiveMenu() {
                 slotProps={{
                   primary: {
                     sx: {
-                      fontFamily: "var(--font-space-grotesk), sans-serif",
+                      fontFamily: "var(--font-fraunces), serif",
                       fontWeight: 600,
                       letterSpacing: "0.06em",
                       textTransform: "uppercase",
@@ -71,7 +71,7 @@ export default function ResponsiveMenu() {
         elevation={0}
         position="fixed"
         sx={{
-          backgroundColor: "rgba(8,13,26,0.60)",
+          backgroundColor: "rgba(6,14,9,0.72)",
           backdropFilter: "blur(14px)",
           WebkitBackdropFilter: "blur(14px)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",

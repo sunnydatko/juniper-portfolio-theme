@@ -6,61 +6,61 @@ const theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      light: "#93C5FD",
-      main: "#3B82F6",
-      dark: "#2563EB",
+      light: "#7E9C87", // sage
+      main: "#4F6B59",  // juniper
+      dark: "#2A4034",  // pine
     },
     secondary: {
-      light: "#1E3A8A",
-      main: "#0B1736",
-      dark: "#030712",
+      light: "#E4D3A4", // warm sunlight
+      main: "#C6A96A",  // antique brass
+      dark: "#8E7341",  // aged bronze
     },
     error: {
-      light: "#FB923C",
-      main: "#F97316",
-      dark: "#EA580C",
+      light: "#E8A3A3",
+      main: "#C85C5C",
+      dark: "#8A3E3E",
     },
     background: {
-      default: "#080d1a",
-      paper: "#0f1729",
+      default: "#0b1710",
+      paper: "#101c14",
     },
     grey: {
-      100: "#F8FAFC",
-      200: "#E2E8F0",
-      300: "#CBD5E1",
-      400: "#94A3B8",
-      500: "#64748B",
-      600: "#475569",
-      700: "#334155",
-      800: "#1E293B",
-      900: "#0F172A",
+      100: "#F3F1EB",
+      200: "#DDD8CD",
+      300: "#BBB4A6",
+      400: "#8E8779",
+      500: "#686257",
+      600: "#4B473F",
+      700: "#343129",
+      800: "#22201B",
+      900: "#141310",
     },
   },
   typography: {
     fontFamily: "var(--font-inter), sans-serif",
     h1: {
-      fontFamily: "var(--font-space-grotesk), sans-serif",
+      fontFamily: "var(--font-fraunces), serif",
       fontWeight: 700,
       letterSpacing: "-0.02em",
     },
     h2: {
-      fontFamily: "var(--font-space-grotesk), sans-serif",
+      fontFamily: "var(--font-fraunces), serif",
       fontWeight: 700,
     },
     h3: {
-      fontFamily: "var(--font-space-grotesk), sans-serif",
+      fontFamily: "var(--font-fraunces), serif",
       fontWeight: 600,
     },
     h4: {
-      fontFamily: "var(--font-space-grotesk), sans-serif",
+      fontFamily: "var(--font-fraunces), serif",
       fontWeight: 600,
     },
     h5: {
-      fontFamily: "var(--font-space-grotesk), sans-serif",
+      fontFamily: "var(--font-fraunces), serif",
       fontWeight: 600,
     },
     h6: {
-      fontFamily: "var(--font-space-grotesk), sans-serif",
+      fontFamily: "var(--font-fraunces), serif",
       fontWeight: 600,
     },
   },
@@ -81,7 +81,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textDecoration: "none",
-          color: "#3B82F6",
+          color: "#7E9C87",
           transition: "color 0.3s",
           position: "relative",
           paddingBottom: "3px",
@@ -93,13 +93,13 @@ const theme = createTheme({
             width: "100%",
             height: "2px",
             borderRadius: "4px",
-            backgroundColor: "#7DD3FC",
+            backgroundColor: "#C6A96A",
             transformOrigin: "right",
             transform: "scaleX(0)",
             transition: "transform 0.3s ease-in-out",
           },
           "&:hover": {
-            color: "#7DD3FC",
+            color: "#A8C4B0",
             "&::before": {
               transformOrigin: "left",
               transform: "scaleX(1)",

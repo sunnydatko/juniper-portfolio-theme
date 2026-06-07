@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import skyBg from "../images/sky-bg.png";
+import heroBg from "../images/hero-bg.png";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(32px); filter: blur(6px); }
@@ -20,7 +20,7 @@ const anim = (delay: string) => ({
 });
 
 const NEUTRAL =
-  "radial-gradient(ellipse 70% 80% at 50% 50%, transparent 0%, rgba(8,13,26,0.4) 100%)";
+  "radial-gradient(ellipse 70% 80% at 50% 50%, transparent 0%, rgba(13,26,18,0.4) 100%)";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -32,7 +32,7 @@ export default function Hero() {
     const rect = sectionRef.current.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
-    mouseOverlayRef.current.style.background = `radial-gradient(ellipse 70% 80% at ${x}% ${y}%, transparent 0%, rgba(8,13,26,0.4) 100%)`;
+    mouseOverlayRef.current.style.background = `radial-gradient(ellipse 70% 80% at ${x}% ${y}%, transparent 0%, rgba(13,26,18,0.4) 100%)`;
   };
 
   const handleMouseLeave = () => {
@@ -62,7 +62,7 @@ export default function Hero() {
         alignItems: "center",
         minHeight: { xs: "100svh", md: "100vh" },
         overflow: "hidden",
-        backgroundColor: "#080d1a",
+        backgroundColor: "#0d1a12",
       }}
     >
       {/* Background photo */}
@@ -72,7 +72,7 @@ export default function Hero() {
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `url(${skyBg.src})`,
+          backgroundImage: `url(${heroBg.src})`,
           backgroundSize: "cover",
           backgroundPosition: { xs: "center", md: "center" },
           willChange: "transform, opacity",
@@ -88,8 +88,8 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background: {
-            xs: "linear-gradient(180deg, rgba(8,13,26,0.75) 0%, rgba(8,13,26,0.55) 50%, rgba(8,13,26,0.80) 100%)",
-            md: "linear-gradient(90deg, rgba(8,13,26,0.82) 0%, rgba(8,13,26,0.65) 38%, rgba(8,13,26,0.35) 65%, rgba(8,13,26,0.10) 100%)",
+            xs: "linear-gradient(180deg, rgba(13,26,18,0.72) 0%, rgba(13,26,18,0.50) 50%, rgba(13,26,18,0.76) 100%)",
+            md: "linear-gradient(90deg, rgba(13,26,18,0.78) 0%, rgba(13,26,18,0.58) 38%, rgba(13,26,18,0.28) 65%, rgba(13,26,18,0.06) 100%)",
           },
         }}
       />

@@ -29,7 +29,7 @@ const Heading = ({ children }: { children: React.ReactNode }) => (
     variant="h4"
     sx={{
       color: "common.white",
-      fontFamily: "var(--font-space-grotesk), sans-serif",
+      fontFamily: "var(--font-fraunces), serif",
       fontWeight: 600,
       fontSize: { xs: "20px", md: "24px" },
       mt: 6,
@@ -610,6 +610,9 @@ export default async function BlogPostPage({
           position: "relative",
           width: "100%",
           height: { xs: 280, sm: 380, md: 500 },
+          overflow: "hidden",
+          "& img": { transition: "transform 0.4s ease" },
+          "&:hover img": { transform: "scale(1.05)" },
         }}
       >
         <Image
@@ -627,7 +630,7 @@ export default async function BlogPostPage({
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(to bottom, rgba(8,13,26,0.2) 40%, rgba(8,13,26,1) 100%)",
+              "linear-gradient(to bottom, rgba(8,14,9,0.2) 40%, rgba(8,14,9,1) 100%)",
           }}
         />
       </Box>
@@ -635,7 +638,7 @@ export default async function BlogPostPage({
       <Box
         component="main"
         sx={{
-          backgroundColor: "background.default",
+          backgroundColor: "#080e09",
           pb: { xs: 10, md: 16 },
         }}
       >
