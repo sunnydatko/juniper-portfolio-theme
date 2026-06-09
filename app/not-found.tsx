@@ -10,7 +10,7 @@ import Image from "next/image";
 import { useMemo } from "react";
 import ResponsiveMenu from "./components/ResponsiveMenu";
 import Footer from "./components/Footer";
-import notFoundBg from "./images/not-found-bg.png";
+import notFoundBg from "./images/not-found-bg.webp";
 
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(18px); }
