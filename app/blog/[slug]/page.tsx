@@ -651,7 +651,7 @@ export default async function BlogPostPage({
               display: "inline-flex",
               alignItems: "center",
               gap: 0.75,
-              color: "grey.500",
+              color: "grey.400",
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: 14,
               fontWeight: 500,
@@ -674,7 +674,7 @@ export default async function BlogPostPage({
             <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
               <Typography
                 sx={{
-                  color: "primary.main",
+                  color: "secondary.main",
                   fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 600,
                   fontSize: 12,
@@ -686,7 +686,7 @@ export default async function BlogPostPage({
               </Typography>
               <Typography
                 sx={{
-                  color: "grey.600",
+                  color: "grey.400",
                   fontFamily: "var(--font-inter), sans-serif",
                   fontSize: 12,
                   letterSpacing: "0.18em",
@@ -698,7 +698,7 @@ export default async function BlogPostPage({
               {post.date && (
                 <Typography
                   sx={{
-                    color: "grey.600",
+                    color: "grey.400",
                     fontFamily: "var(--font-inter), sans-serif",
                     fontSize: 12,
                     letterSpacing: "0.18em",

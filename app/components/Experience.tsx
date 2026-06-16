@@ -96,12 +96,15 @@ sx={{ color: "common.white" }}
 
             <Typography
               sx={{
-                color: "grey.500",
+                color: "primary.light",
                 fontFamily: "var(--font-inter), sans-serif",
-                fontSize: { xs: 13, md: 14 },
-                letterSpacing: "0.04em",
-                mt: 0.5,
-                mb: 1,
+                fontSize: { xs: 11, md: 12 },
+                fontWeight: 500,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                opacity: 0.7,
+                mt: 0.75,
+                mb: 1.25,
               }}
             >
               {company.dates}
