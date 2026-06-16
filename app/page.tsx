@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollReveal from "./components/ScrollReveal";
 import SectionDivider from "./components/SectionDivider";
+import Box from "@mui/material/Box";
 
 export default function Home() {
   return (
@@ -18,6 +19,14 @@ export default function Home() {
       <ScrollReveal />
       <main style={{ position: "relative", zIndex: 1 }}>
         <Hero />
+        <Box
+          aria-hidden
+          sx={{
+            height: "48px",
+            background: "linear-gradient(to bottom, #0b1710 0%, transparent 100%)",
+            pointerEvents: "none",
+          }}
+        />
         <SectionDivider />
         <About />
         <SectionDivider />

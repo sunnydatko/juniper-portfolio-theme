@@ -20,7 +20,7 @@ const anim = (delay: string) => ({
 });
 
 const NEUTRAL =
-  "radial-gradient(ellipse 70% 80% at 50% 50%, transparent 0%, rgba(13,26,18,0.4) 100%)";
+  "radial-gradient(ellipse 70% 80% at 50% 50%, transparent 0%, rgba(11,23,16,0.4) 100%)";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -32,7 +32,7 @@ export default function Hero() {
     const rect = sectionRef.current.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
-    mouseOverlayRef.current.style.background = `radial-gradient(ellipse 70% 80% at ${x}% ${y}%, transparent 0%, rgba(13,26,18,0.4) 100%)`;
+    mouseOverlayRef.current.style.background = `radial-gradient(ellipse 70% 80% at ${x}% ${y}%, transparent 0%, rgba(11,23,16,0.4) 100%)`;
   };
 
   const handleMouseLeave = () => {
@@ -62,7 +62,7 @@ export default function Hero() {
         alignItems: "center",
         minHeight: { xs: "100svh", md: "100vh" },
         overflow: "hidden",
-        backgroundColor: "#0d1a12",
+        backgroundColor: "#0b1710",
       }}
     >
       {/* Background photo */}
@@ -102,8 +102,8 @@ export default function Hero() {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "220px",
-          background: "linear-gradient(to bottom, transparent 0%, #0b1710 100%)",
+          height: "35%",
+          background: "linear-gradient(to bottom, transparent 0%, rgba(11,23,16,0.2) 28%, rgba(11,23,16,0.6) 54%, rgba(11,23,16,0.92) 72%, #0b1710 85%, #0b1710 100%)",
           pointerEvents: "none",
           zIndex: 1,
         }}
