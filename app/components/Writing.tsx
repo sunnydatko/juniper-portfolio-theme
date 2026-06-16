@@ -143,7 +143,7 @@ export default function Writing() {
                       fontSize: 11,
                       letterSpacing: "0.22em",
                       textTransform: "uppercase",
-                      color: "grey.500",
+                      color: "grey.300",
                     }}
                   >
                     {post.category}
@@ -154,7 +154,7 @@ export default function Writing() {
                       fontSize: 11,
                       letterSpacing: "0.18em",
                       textTransform: "uppercase",
-                      color: "grey.400",
+                      color: "grey.300",
                     }}
                   >
                     · {post.readTime} min read
@@ -166,7 +166,7 @@ export default function Writing() {
                         fontSize: 11,
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
-                        color: "grey.400",
+                        color: "grey.300",
                       }}
                     >
                       · {post.date}
@@ -190,7 +190,7 @@ export default function Writing() {
                 {/* Excerpt — clamped to 2 lines */}
                 <Typography
                   sx={{
-                    color: "grey.400",
+                    color: "grey.300",
                     fontFamily: "var(--font-inter), sans-serif",
                     fontSize: { xs: 14, md: 15 },
                     lineHeight: 1.65,
