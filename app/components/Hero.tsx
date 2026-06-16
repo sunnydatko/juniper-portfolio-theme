@@ -77,7 +77,7 @@ export default function Hero() {
           backgroundPosition: { xs: "center", md: "center" },
           willChange: "transform, opacity",
           transformOrigin: "center center",
-          opacity: 0.55,
+          opacity: 0.75,
         }}
       />
 
@@ -88,9 +88,24 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background: {
-            xs: "linear-gradient(180deg, rgba(13,26,18,0.72) 0%, rgba(13,26,18,0.50) 50%, rgba(13,26,18,0.76) 100%)",
-            md: "linear-gradient(90deg, rgba(13,26,18,0.78) 0%, rgba(13,26,18,0.58) 38%, rgba(13,26,18,0.28) 65%, rgba(13,26,18,0.06) 100%)",
+            xs: "linear-gradient(180deg, rgba(13,26,18,0.60) 0%, rgba(13,26,18,0.36) 50%, rgba(13,26,18,0.62) 100%)",
+            md: "linear-gradient(90deg, rgba(13,26,18,0.68) 0%, rgba(13,26,18,0.46) 38%, rgba(13,26,18,0.18) 65%, rgba(13,26,18,0.04) 100%)",
           },
+        }}
+      />
+
+      {/* Bottom fade into page background */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "220px",
+          background: "linear-gradient(to bottom, transparent 0%, #0b1710 100%)",
+          pointerEvents: "none",
+          zIndex: 1,
         }}
       />
 
@@ -130,7 +145,7 @@ export default function Hero() {
             variant="h1"
             sx={{
               ...anim("0.7s"),
-              fontSize: { xs: "42px", sm: "60px", md: "80px" },
+              fontSize: { xs: "42px", sm: "56px", md: "72px" },
               lineHeight: 1.02,
               color: "common.white",
               mb: { xs: 3, md: 4 },

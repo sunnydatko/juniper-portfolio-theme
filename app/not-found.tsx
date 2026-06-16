@@ -10,6 +10,7 @@ import Image from "next/image";
 import { useMemo } from "react";
 import ResponsiveMenu from "./components/ResponsiveMenu";
 import Footer from "./components/Footer";
+import SectionDivider from "./components/SectionDivider";
 import notFoundBg from "./images/not-found-bg.webp";
 
 const fadeUp = keyframes`
@@ -141,16 +142,6 @@ function PineIcon() {
   );
 }
 
-function GoldDivider() {
-  return (
-    <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 1.5 }}>
-      <Box sx={{ width: 56, height: "1px", bgcolor: "rgba(198,169,106,0.45)" }} />
-      <Box sx={{ width: 5, height: 5, borderRadius: "50%", bgcolor: "rgba(198,169,106,0.65)" }} />
-      <Box sx={{ width: 56, height: "1px", bgcolor: "rgba(198,169,106,0.45)" }} />
-    </Box>
-  );
-}
-
 export default function NotFound() {
   return (
     <Box
@@ -248,7 +239,7 @@ export default function NotFound() {
 
           {/* Divider */}
           <Box sx={{ ...anim("0.65s"), my: { xs: 3, md: 3.5 } }}>
-            <GoldDivider />
+            <SectionDivider />
           </Box>
 
           {/* CTA */}

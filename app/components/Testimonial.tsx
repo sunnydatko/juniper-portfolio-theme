@@ -22,85 +22,54 @@ export default function Testimonial() {
       id="testimonial"
       sx={{
         py: { xs: 10, md: 14 },
-        borderTop: "1px solid rgba(255,255,255,0.06)",
         position: "relative",
         zIndex: 1,
-        overflow: "hidden",
       }}
     >
-      <Box
-        aria-hidden
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: { xs: "120%", md: "900px" },
-          height: { xs: "120%", md: "600px" },
-          background:
-            "radial-gradient(circle, rgba(80,130,255,.12), transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-      <Container sx={{ maxWidth: "650px !important", textAlign: "center", position: "relative" }}>
-        <Typography
-          component="span"
-          className="reveal"
-          sx={{
-            display: "block",
-            color: "primary.light",
-            fontFamily: "var(--font-inter), sans-serif",
-            fontWeight: 600,
-            fontSize: { xs: 12.5, md: 14 },
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            mb: 2,
-          }}
-        >
-          + Recommendation
-        </Typography>
+      <Container sx={{ maxWidth: "650px !important", textAlign: "center" }}>
+        <Box className="reveal" sx={{ mb: 6 }}>
+          <Typography
+            component="span"
+            sx={{
+              display: "block",
+              color: "primary.light",
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 600,
+              fontSize: { xs: 12.5, md: 14 },
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              mb: 2,
+            }}
+          >
+            + Recommendation
+          </Typography>
+          <Typography variant="h3">What Others Say</Typography>
+        </Box>
 
         <Typography
           className="reveal"
           style={{ transitionDelay: "0.1s" }}
           sx={{
-            color: "primary.light",
-            fontFamily: "Georgia, serif",
-            fontSize: { xs: "6rem", md: "8rem" },
-            lineHeight: 0.5,
-            mt: 3,
-            mb: 5,
-            userSelect: "none",
-          }}
-          aria-hidden
-        >
-          &ldquo;
-        </Typography>
-
-        <Typography
-          className="reveal"
-          style={{ transitionDelay: "0.2s" }}
-          sx={{
-            color: "grey.200",
+            color: "grey.300",
             fontSize: { xs: "18px", md: "21px" },
             lineHeight: 1.85,
             fontStyle: "italic",
-            mb: 1,
+            mb: 5,
           }}
         >
-          {quote}
+          &ldquo;{quote}&rdquo;
         </Typography>
 
         <Box
           className="reveal"
-          style={{ transitionDelay: "0.3s" }}
+          style={{ transitionDelay: "0.2s" }}
           sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1.5 }}
         >
           {avatarSrc && (
             <Box
               sx={{
-                width: 118,
-                height: 118,
+                width: 72,
+                height: 72,
                 borderRadius: "50%",
                 overflow: "hidden",
                 border: "2px solid rgba(255,255,255,0.08)",
@@ -113,7 +82,7 @@ export default function Testimonial() {
                 alt={name}
                 fill
                 style={{ objectFit: "cover" }}
-                sizes="118px"
+                sizes="72px"
               />
             </Box>
           )}
@@ -130,7 +99,7 @@ export default function Testimonial() {
             </Typography>
             <Typography
               sx={{
-                color: "rgba(255,255,255,0.72)",
+                color: "grey.500",
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: { xs: 12, md: 13 },
                 letterSpacing: "0.04em",

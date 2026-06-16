@@ -10,6 +10,7 @@ import { blogPosts } from "../../helpers/config";
 import ResponsiveMenu from "../../components/ResponsiveMenu";
 import Footer from "../../components/Footer";
 import ReadingProgress from "../../components/ReadingProgress";
+import SectionDivider from "../../components/SectionDivider";
 import blog1 from "../../images/blog-1.webp";
 import blog2 from "../../images/blog-2.webp";
 import blog3 from "../../images/blog-3.webp";
@@ -741,13 +742,9 @@ export default async function BlogPostPage({
           </Box>
 
           {/* Divider */}
-          <Box
-            sx={{
-              height: "1px",
-              backgroundColor: "rgba(255,255,255,0.08)",
-              mb: 6,
-            }}
-          />
+          <Box sx={{ mb: 6 }}>
+            <SectionDivider />
+          </Box>
 
           {/* Article body */}
           <Box>{content}</Box>
