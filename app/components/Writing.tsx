@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import NextLink from "next/link";
 import type { StaticImageData } from "next/image";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { blogPosts } from "../helpers/config";
+import { blogPosts } from "../helpers/data";
 import blog1 from "../images/blog-1.webp";
 import blog2 from "../images/blog-2.webp";
 import blog3 from "../images/blog-3.webp";
@@ -51,7 +52,7 @@ export default function Writing() {
           {blogPosts.map((post, index) => (
             <Box
               key={post.slug}
-              component="a"
+              component={NextLink}
               href={post.href}
               className="reveal"
               style={{ transitionDelay: `${index * 0.15 + 0.1}s` }}

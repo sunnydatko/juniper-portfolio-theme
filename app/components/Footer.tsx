@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import XIcon from "@mui/icons-material/X";
-import { social } from "../helpers/config";
+import { social } from "../helpers/data";
 
 const iconMap: Record<string, React.ReactNode> = {
   GitHub: <GitHubIcon fontSize="small" />,

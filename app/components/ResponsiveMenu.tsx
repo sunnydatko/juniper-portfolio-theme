@@ -88,7 +88,8 @@ export default function ResponsiveMenu() {
       >
         <Toolbar>
           <IconButton
-            aria-label="open navigation"
+            aria-label={mobileOpen ? "close navigation" : "open navigation"}
+            aria-expanded={mobileOpen}
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ color: "common.white", mr: 2, display: { sm: "none" } }}
